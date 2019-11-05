@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srMatch"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.match.MatchFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_16dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMatch"
+            style="@style/RecyclerViewStyleDefault" />
+
+        <include
+            android:id="@+id/progressMatch"
+            layout="@layout/layout_progress"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layout_error"
+            layout="@layout/layout_error"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
