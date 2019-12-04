@@ -12,7 +12,7 @@ import com.reynaldiwijaya.bravo.view.adapter.BravoPagerAdapter
 
 abstract class BaseActivity : AppCompatActivity(), BaseView {
 
-    protected abstract val layoutResource : Int
+    protected abstract val layoutResource: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,10 +58,10 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     override fun setUpViewPager(
         viewPager: TeamViewPager,
         tabLayout: TabLayout,
-        adapter : BravoPagerAdapter,
-        swipeEnabled : Boolean?,
-        offScreenPageLimit : Int)
-    {
+        adapter: BravoPagerAdapter,
+        swipeEnabled: Boolean?,
+        offScreenPageLimit: Int
+    ) {
         tabLayout.tabIconTint = null
 
         viewPager.adapter = adapter
@@ -72,7 +72,8 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     }
 
     override fun hideSoftKeyboard(activity: Activity) {
-        val inputMethodManager = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        val inputMethodManager =
+            activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(
             activity.currentFocus!!.windowToken, 0
         )

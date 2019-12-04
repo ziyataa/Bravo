@@ -1,5 +1,5 @@
 package com.reynaldiwijaya.bravo.view.detailLeague
 
-interface LeagueAndMatchActionListener {
+interface DetailLeagueActionListener {
     fun onClickSearch()
 }

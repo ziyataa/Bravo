@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Bravo!</string>
-    <string name="label_team">Teams</string>
+    <string name="label_teams">Teams</string>
     <string name="label_league">Leagues</string>
     <string name="label_refresh">Tap to reload</string>
 
@@ -37,7 +37,6 @@
     <string name="label_separate_score">:</string>
     <string name="label_format_time">HH:mm</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="label_data_not_found">Data Not Found</string>
     <string name="label_statistic">Statistic</string>
     <string name="label_lineup">Lineup</string>
@@ -51,4 +50,31 @@
     <string name="label_substitutes">Substitutes</string>
     <string name="label_goalkeeper">Goalkeeper</string>
     <string name="label_soccer">Soccer</string>
+    <string name="label_teams_and_league">Teams And League</string>
+    <string name="favorites_match">Favorites Match</string>
+    <string name="label_success_to_add">Success to add this match to favorite</string>
+    <string name="label_success_to_remove">Success to remove data from favorite</string>
+
+    <string name="label_standings">Standings</string>
+    <string name="label_desc">Description</string>
+    <string name="label_squad">Squad</string>
+    <string name="label_next"><![CDATA[>]]></string>
+    <string name="label_name">Name</string>
+    <string name="label_nationality">Nationality</string>
+    <string name="label_team">Team</string>
+    <string name="label_date_born">Date Born</string>
+    <string name="label_position">Position</string>
+    <string name="label_number">Number</string>
+    <string name="label_date_signed">Date Signed</string>
+    <string name="label_signing">Signing</string>
+    <string name="label_wage">Wage</string>
+    <string name="label_agent">Agent</string>
+    <string name="label_birth_location">Birth Location</string>
+    <string name="label_description">Description</string>
+    <string name="label_personal_info">Personal Info</string>
+    <string name="label_played">P</string>
+    <string name="label_goals_difference">+/-</string>
+    <string name="label_points">PTS</string>
+    <string name="label_match">Match</string>
+
 </resources>

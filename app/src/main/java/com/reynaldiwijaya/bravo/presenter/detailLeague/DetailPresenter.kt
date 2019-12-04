@@ -4,18 +4,20 @@ import com.reynaldiwijaya.bravo.data.ApiRepository
 import com.reynaldiwijaya.bravo.data.DataSource
 import com.reynaldiwijaya.bravo.data.model.league.LeagueItem
 
-class DetailPresenter(private val view : DetailView,
-                      private val repository: ApiRepository) {
+class DetailPresenter(
+    private val view: DetailView,
+    private val repository: ApiRepository
+) {
 
-    fun getDataInLeague(id : String) {
-        repository.getDataInLeagueById(id, object : DataSource.GetDataLeaguesCallback{
+    fun getDataInLeague(id: String) {
+        repository.getDataInLeagueById(id, object : DataSource.GetDataLeaguesCallback {
             override fun onShowProgressDialog() {
                 view.showLoading()
 
             }
 
             override fun onHideProgressDialog() {
-                view.hideLoadimg()
+                view.hideLoading()
             }
 
             override fun onSuccess(data: List<LeagueItem>) {

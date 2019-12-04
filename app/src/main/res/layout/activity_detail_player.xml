@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.detailPlayer.DetailPlayerActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbDetailPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        app:navigationIcon="@drawable/ic_arrow_back_gray"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@android:color/white" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playerNameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_below="@id/tbDetailPlayer">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_40" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgPlayer"
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_80dp"
+            android:layout_marginTop="8dp"
+            app:civ_border_color="@color/gray"
+            app:civ_border_width="@dimen/dimen_2dp"
+            app:layout_constraintEnd_toEndOf="@+id/view3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPlayerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgPlayer"
+            tools:text="Brand Leno"
+            android:fontFamily="casual"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTeamName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayerName"
+            tools:text="Arsenal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/playerNameContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dimen_8dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_personal_info"
+                android:textSize="@dimen/text_size_18sp"
+                android:textColor="@android:color/black"
+                android:fontFamily="casual"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/dimen_8dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_name"
+                android:layout_marginEnd="@dimen/dimen_8dp"
+                android:fontFamily="casual"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_18sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPlayerName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tvName"
+                android:layout_alignParentEnd="true"
+                android:gravity="end"
+                android:textSize="@dimen/text_size_18sp"
+                android:fontFamily="casual"
+                tools:text="Brand Leno" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNationality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_nationality"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerNationality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvNationality"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="Germany" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTeam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_team"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerTeam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvTeam"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="Arsenal" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDateBorn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_date_born"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerDateBorn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvDateBorn"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="2019-02-03" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPosition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_position"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerPosition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvPosition"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="Goalkeeper" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_number"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvNumber"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="13" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDateSigned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_date_signed"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerDateSigned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvDateSigned"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="2019-02-03" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSigning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_signing"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerSigning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvSigning"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="$13.000.000" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_wage"
+                    android:fontFamily="casual"
+                    android:layout_marginEnd="@dimen/dimen_8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerWage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvWage"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="$13.000.000" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAgent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_agent"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:layout_marginEnd="@dimen/dimen_8dp"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerAgent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvAgent"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="$13.000.000" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBirthLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_birth_location"
+                    android:fontFamily="casual"
+                    android:layout_marginEnd="@dimen/dimen_8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerBirthLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvBirthLocation"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="$13.000.000" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_description"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/black"
+                    android:layout_marginEnd="@dimen/dimen_8dp"
+                    android:textSize="@dimen/text_size_18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayerDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tvDesc"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:fontFamily="casual"
+                    tools:text="Lorem Ipsum"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

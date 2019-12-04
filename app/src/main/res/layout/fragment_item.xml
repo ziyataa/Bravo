@@ -19,12 +19,17 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvItem"
             style="@style/RecyclerViewStyleDefault"
-            android:layout_marginTop="@dimen/dimen_8dp"
-            android:layout_below="@id/spinnerItem" />
+            android:layout_below="@id/spinnerItem"
+            android:layout_marginTop="@dimen/dimen_8dp" />
 
         <include
             android:id="@+id/layout_progress"
             layout="@layout/layout_progress" />
+
+        <include
+            android:id="@+id/layout_empty_data"
+            layout="@layout/layout_empty_data_search"
+            android:visibility="gone"/>
 
     </RelativeLayout>
 

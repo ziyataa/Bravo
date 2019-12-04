@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class MatchResponse(
     @SerializedName("events")
-    val matches : List<MatchItem>,
+    val matches: List<MatchItem>,
     @SerializedName("event")
-    val match : List<MatchItem>
+    val match: List<MatchItem>
 )

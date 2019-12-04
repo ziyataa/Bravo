@@ -21,35 +21,75 @@ class ItemAdapter(private var state: String, val onItemClick: OnItemClick) :
     private val teamsData = mutableListOf<TeamItem>()
     private val leaguesData = mutableListOf<LeagueItem>()
 
-    fun setDataTeam(datas : List<TeamItem>) {
+    fun setDataTeam(data: List<TeamItem>) {
         this.teamsData.clear()
-        this.teamsData.addAll(datas)
+        this.teamsData.addAll(data)
         notifyDataSetChanged()
     }
 
-    fun setDataLeague(datas : List<LeagueItem>) {
+    fun setDataLeague(datas: List<LeagueItem>) {
         this.leaguesData.clear()
         this.leaguesData.addAll(datas)
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        return when(state) {
-            ItemState.TEAMS.state -> TeamViewHolder(TeamItemUI().createView(AnkoContext.create(parent.context, parent)))
-            else -> LeagueViewHolder(TeamItemUI().createView(AnkoContext.create(parent.context, parent)))
+        return when (state) {
+            ItemState.TEAMS.state -> TeamViewHolder(
+                TeamItemUI().createView(
+                    AnkoContext.create(
+                        parent.context,
+                        parent
+                    )
+                )
+            )
+            ItemState.TEAMS_IN_LEAGUE.state -> TeamViewHolder(
+                TeamItemUI().createView(
+                    AnkoContext.create(
+                        parent.context,
+                        parent
+                    )
+                )
+            )
+            ItemState.TEAMS_FAVORITE.state -> TeamViewHolder(
+                TeamItemUI().createView(
+                    AnkoContext.create(
+                        parent.context,
+                        parent
+                    )
+                )
+            )
+            else -> LeagueViewHolder(
+                TeamItemUI().createView(
+                    AnkoContext.create(
+                        parent.context,
+                        parent
+                    )
+                )
+            )
         }
     }
 
     override fun getItemCount(): Int {
-        return when(state) {
+        return when (state) {
             ItemState.TEAMS.state -> teamsData.size
+            ItemState.TEAMS_IN_LEAGUE.state -> teamsData.size
+            ItemState.TEAMS_FAVORITE.state -> teamsData.size
             else -> leaguesData.size
         }
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        when(state) {
+        when (state) {
             ItemState.TEAMS.state -> {
+                val team = teamsData[position]
+                (holder as TeamViewHolder).bindItem(team)
+            }
+            ItemState.TEAMS_IN_LEAGUE.state -> {
+                val team = teamsData[position]
+                (holder as TeamViewHolder).bindItem(team)
+            }
+            ItemState.TEAMS_FAVORITE.state -> {
                 val team = teamsData[position]
                 (holder as TeamViewHolder).bindItem(team)
             }
@@ -61,12 +101,12 @@ class ItemAdapter(private var state: String, val onItemClick: OnItemClick) :
     }
 
     open inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvName : TextView = view.find(R.id.team_name)
-        val imgLogo : ImageView = view.find(R.id.team_badge)
+        val tvName: TextView = view.find(R.id.team_name)
+        val imgLogo: ImageView = view.find(R.id.team_badge)
     }
 
     inner class TeamViewHolder(view: View) : ItemViewHolder(view) {
-        fun bindItem(data : TeamItem) {
+        fun bindItem(data: TeamItem) {
             tvName.text = data.teamName
             data.teamBadge?.let { imgLogo.loadImageUrl(itemView.context, it) }
             itemView.onClick {
@@ -76,7 +116,7 @@ class ItemAdapter(private var state: String, val onItemClick: OnItemClick) :
     }
 
     inner class LeagueViewHolder(view: View) : ItemViewHolder(view) {
-        fun bindItem(data : LeagueItem) {
+        fun bindItem(data: LeagueItem) {
             data.leagueBadge?.let { imgLogo.loadImageUrl(itemView.context, it) }
             tvName.text = data.leagueName
             itemView.onClick {
@@ -86,8 +126,8 @@ class ItemAdapter(private var state: String, val onItemClick: OnItemClick) :
     }
 
     interface OnItemClick {
-        fun onItemLeagueClicked(league : LeagueItem)
-        fun onItemTeamClicked(team : TeamItem)
+        fun onItemLeagueClicked(league: LeagueItem)
+        fun onItemTeamClicked(team: TeamItem)
     }
 
 }

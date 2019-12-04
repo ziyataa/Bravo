@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".view.detailTeam.TeamDescFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimen_16dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTeamDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_18sp"
+            tools:text="Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

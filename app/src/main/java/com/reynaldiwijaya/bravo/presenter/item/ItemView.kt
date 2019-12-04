@@ -6,5 +6,6 @@ interface ItemView {
     fun showLoadingItem()
     fun hideLoadingItem()
     fun showTeamList(data: List<TeamItem>)
-    fun showErrorItem(message : String)
+    fun showLocalTeamList(data : List<TeamItem>)
+    fun showErrorItem(message: String)
 }

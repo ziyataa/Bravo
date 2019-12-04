@@ -16,10 +16,12 @@ interface BaseView {
 
     fun finishActivity()
 
-    fun setUpViewPager(viewPager : TeamViewPager, tabLayout : TabLayout,
-                       adapter : BravoPagerAdapter, swipeEnabled : Boolean?,
-                       offScreenPageLimit : Int)
+    fun setUpViewPager(
+        viewPager: TeamViewPager, tabLayout: TabLayout,
+        adapter: BravoPagerAdapter, swipeEnabled: Boolean?,
+        offScreenPageLimit: Int
+    )
 
-    fun hideSoftKeyboard(activity : Activity)
+    fun hideSoftKeyboard(activity: Activity)
 
 }

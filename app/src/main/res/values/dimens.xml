@@ -16,4 +16,10 @@
     <dimen name="dimen_24dp">24dp</dimen>
     <dimen name="dimen_5dp">5dp</dimen>
     <dimen name="dimen_80dp">80dp</dimen>
+    <dimen name="dimen_280dp">280dp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_1dp">1dp</dimen>
+    <dimen name="dimen_30dp">30dp</dimen>
+    <dimen name="dimen_35dp">35dp</dimen>
 </resources>

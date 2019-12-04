@@ -2,16 +2,14 @@ package com.reynaldiwijaya.bravo.view.detailMatch
 
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
 import com.reynaldiwijaya.bravo.R
 import com.reynaldiwijaya.bravo.data.model.match.MatchItem
 import com.reynaldiwijaya.bravo.utils.Keys
-import com.reynaldiwijaya.bravo.utils.emptyScoreMatch
+import com.reynaldiwijaya.bravo.utils.emptyDataWithStrip
 import com.reynaldiwijaya.bravo.utils.emptyString
 import kotlinx.android.synthetic.main.fragment_lineup.*
 
@@ -61,10 +59,10 @@ class LineupFragment : Fragment() {
             tvLineupGoalkeeperAway.text = goalKeeperAway
         }
         if (match?.homeLineupGoalKeeper == null) {
-            tvLineupGoalkeeperHome.text = emptyScoreMatch()
+            tvLineupGoalkeeperHome.text = emptyDataWithStrip()
         }
         if (match?.awayLineupGoalkeeper == null) {
-            tvLineupGoalkeeperAway.text = emptyScoreMatch()
+            tvLineupGoalkeeperAway.text = emptyDataWithStrip()
         }
 
         // Defense
@@ -85,10 +83,10 @@ class LineupFragment : Fragment() {
             tvLineupDefendersAway.text = defender
         }
         if (match?.homeLineupDefense == null) {
-            tvLineupDefendersHome.text = emptyScoreMatch()
+            tvLineupDefendersHome.text = emptyDataWithStrip()
         }
         if (match?.awayLineupDefense == null) {
-            tvLineupDefendersAway.text = emptyScoreMatch()
+            tvLineupDefendersAway.text = emptyDataWithStrip()
         }
 
         // Midfielders
@@ -109,10 +107,10 @@ class LineupFragment : Fragment() {
             tvLineupMidFieldersAway.text = midField
         }
         if (match?.homeLineupMidfield == null) {
-            tvLineupMidFieldersHome.text = emptyScoreMatch()
+            tvLineupMidFieldersHome.text = emptyDataWithStrip()
         }
         if (match?.awayLineupMidField == null) {
-            tvLineupMidFieldersAway.text = emptyScoreMatch()
+            tvLineupMidFieldersAway.text = emptyDataWithStrip()
         }
 
         // Forward
@@ -133,10 +131,10 @@ class LineupFragment : Fragment() {
             tvLineupForwardAway.text = forward
         }
         if (match?.homeLineupForward == null) {
-            tvLineupForwardHome.text = emptyScoreMatch()
+            tvLineupForwardHome.text = emptyDataWithStrip()
         }
         if (match?.awayLineupForward == null) {
-            tvLineupForwardAway.text = emptyScoreMatch()
+            tvLineupForwardAway.text = emptyDataWithStrip()
         }
 
         // Substitutes
@@ -157,10 +155,10 @@ class LineupFragment : Fragment() {
             tvLineupSubstitutesAway.text = substitute
         }
         if (match?.awayLineupSubstitutes == null) {
-            tvLineupSubstitutesHome.text = emptyScoreMatch()
+            tvLineupSubstitutesHome.text = emptyDataWithStrip()
         }
         if (match?.awayLineupSubstitutes == null) {
-            tvLineupSubstitutesAway.text = emptyScoreMatch()
+            tvLineupSubstitutesAway.text = emptyDataWithStrip()
         }
 
     }

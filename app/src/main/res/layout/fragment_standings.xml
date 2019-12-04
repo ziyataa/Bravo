@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.standings.StandingsFragment">
+
+    <RelativeLayout
+        android:id="@+id/stateViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/layout_progress"
+            layout="@layout/layout_progress"/>
+
+        <include
+            android:id="@+id/layout_error"
+            layout="@layout/layout_error"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/themeTableContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_8dp"
+            android:weightSum="6">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLeagueName"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ellipsize="end"
+                android:fontFamily="casual"
+                android:maxLines="1"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_18sp"
+                tools:text="La Liga" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:fontFamily="casual"
+                android:gravity="center_horizontal"
+                android:text="@string/label_played"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_18sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:fontFamily="casual"
+                android:gravity="center_horizontal"
+                android:text="@string/label_goals_difference"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_18sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:fontFamily="casual"
+                android:gravity="center_horizontal"
+                android:text="@string/label_points"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_18sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@id/themeTableContainer"/>
+
+</RelativeLayout>

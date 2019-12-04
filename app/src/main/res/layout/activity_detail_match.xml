@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailMatchContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.detailMatch.DetailMatchActivity">
@@ -10,8 +11,8 @@
         android:id="@+id/ablDetailMatch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppbarLayout"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppbarLayout">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -21,7 +22,7 @@
             app:titleEnabled="false">
 
             <RelativeLayout
-                android:id="@+id/detailMatchContainer"
+                android:id="@+id/resultMatchContainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="gone"
@@ -31,9 +32,9 @@
                     android:id="@+id/imgBgDetailMatch"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/bg_football_field"
-                    android:scaleType="centerCrop"
                     android:background="@color/colorPrimaryDark"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_football_field"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -72,9 +73,9 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:paddingTop="@dimen/dimen_8dp"
-                            android:text="@string/sample_team_name"
                             android:textColor="@color/white"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:text="@string/sample_team_name" />
 
                     </LinearLayout>
 
@@ -88,8 +89,8 @@
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvHomeScore"
                             style="@style/TextTitleExtraBig"
-                            android:text="@string/sample_team_score"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            tools:text="@string/sample_team_score" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             style="@style/TextTitleExtraBig"
@@ -101,10 +102,10 @@
                             android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvAwaycore"
+                            android:id="@+id/tvAwayScore"
                             style="@style/TextTitleExtraBig"
-                            android:text="@string/sample_team_score"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            tools:text="@string/sample_team_score" />
 
                     </LinearLayout>
 
@@ -127,9 +128,9 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:paddingTop="@dimen/dimen_8dp"
-                            android:text="@string/sample_team_name"
                             android:textColor="@color/white"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:text="@string/sample_team_name" />
 
                     </LinearLayout>
 
@@ -141,21 +142,29 @@
                 android:id="@+id/tbMatch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:titleTextColor="@android:color/white"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:navigationIcon="@drawable/ic_arrow_back_gray"
                 android:paddingTop="@dimen/dimen_8dp"
-                app:layout_collapseMode="pin" />
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_arrow_back_gray"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:titleTextColor="@android:color/white" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabDetailMatch"
             style="@style/TabLayoutStyle"
-            app:tabBackground="@color/colorPrimaryDark"
-            android:background="@color/black_40" />
+            android:background="@color/black_40"
+            app:tabBackground="@color/colorPrimaryDark" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/dimen_16dp"
+        android:backgroundTint="@color/colorPrimaryDark" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -170,7 +179,6 @@
             android:id="@+id/detailMatchError"
             layout="@layout/layout_error"
             android:visibility="gone" />
-
 
     </RelativeLayout>
 

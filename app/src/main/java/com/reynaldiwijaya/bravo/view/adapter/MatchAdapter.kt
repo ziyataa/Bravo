@@ -7,24 +7,33 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.reynaldiwijaya.bravo.R
 import com.reynaldiwijaya.bravo.data.model.match.MatchItem
-import com.reynaldiwijaya.bravo.utils.*
+import com.reynaldiwijaya.bravo.utils.changeFormatDate
+import com.reynaldiwijaya.bravo.utils.emptyDataWithStrip
+import com.reynaldiwijaya.bravo.utils.strToDate
+import com.reynaldiwijaya.bravo.utils.toGMTFormat
 import kotlinx.android.synthetic.main.item_match.view.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import java.text.SimpleDateFormat
 
-class MatchAdapter(private val onItemClick: OnItemClick, private val state: String? = null)
-    : RecyclerView.Adapter<MatchAdapter.ViewHolder>() {
+class MatchAdapter(private val onItemClick: OnItemClick, private val state: String? = null) :
+    RecyclerView.Adapter<MatchAdapter.ViewHolder>() {
 
     private val items = mutableListOf<MatchItem>()
 
-    fun setData(data : List<MatchItem>) {
+    fun setData(data: List<MatchItem>) {
         this.items.clear()
         this.items.addAll(data)
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_match, parent, false))
+        return ViewHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.item_match,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int = items.size
@@ -34,12 +43,12 @@ class MatchAdapter(private val onItemClick: OnItemClick, private val state: Stri
         holder.bindItem(match, onItemClick, state)
     }
 
-    class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         @SuppressLint("SimpleDateFormat")
-        fun bindItem(data : MatchItem, onItemClick: OnItemClick, state : String? = null) {
+        fun bindItem(data: MatchItem, onItemClick: OnItemClick, state: String? = null) {
             with(itemView) {
-                var dateMatch : String? = null
-                var timeMatch : String? = null
+                var dateMatch: String? = null
+                var timeMatch: String? = null
 
                 if (data.dateMatch != null || data.time != null) {
                     // Date
@@ -48,34 +57,39 @@ class MatchAdapter(private val onItemClick: OnItemClick, private val state: Stri
                     tvMatchDate.text = dateMatch
 
                     //time
-                    val dateTime = data.time?.let { data.dateMatch?.let { it1 -> toGMTFormat(it1, it) } }
+                    val dateTime =
+                        data.time?.let { data.dateMatch?.let { it1 -> toGMTFormat(it1, it) } }
                     if (dateTime != null) {
-                        timeMatch =  SimpleDateFormat(itemView.context.getString(R.string.label_format_time))
-                            .format(dateTime)
+                        timeMatch =
+                            SimpleDateFormat(itemView.context.getString(R.string.label_format_time))
+                                .format(dateTime)
                         tvMatchTime.text = timeMatch
                     }
 
                 } else {
-                    tvMatchDate.text = emptyScoreMatch()
-                    tvMatchTime.text = emptyScoreMatch()
+                    tvMatchDate.text = emptyDataWithStrip()
+                    tvMatchTime.text = emptyDataWithStrip()
                 }
 
 
                 tvTeamNameHome.text = data.teamNameHome
                 tvTeamNameAway.text = data.teamNameAway
-                if (data.homeScore != null) tvHomeScore.text = data.homeScore
-                else tvHomeScore.text = emptyScoreMatch()
-                if (data.awayScore != null) tvAwaycore.text = data.awayScore
-                else tvAwaycore.text = emptyScoreMatch()
+                tvHomeScore.text = data.homeScore ?: emptyDataWithStrip()
+                tvAwayScore.text = data.awayScore ?: emptyDataWithStrip()
 
                 onClick {
-                    onItemClick.onItemMatchClicked(data.copy(dateMatch = dateMatch, time = timeMatch), state)
+                    onItemClick.onItemMatchClicked(
+                        data.copy(
+                            dateMatch = dateMatch,
+                            time = timeMatch
+                        ), state
+                    )
                 }
             }
         }
     }
 
     interface OnItemClick {
-        fun onItemMatchClicked(match : MatchItem, state : String?)
+        fun onItemMatchClicked(match: MatchItem, state: String?)
     }
 }

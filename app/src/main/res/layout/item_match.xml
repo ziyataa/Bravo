@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:foreground="?selectableItemBackground"
     android:orientation="vertical"
-    android:foreground="?selectableItemBackground">
+    tools:ignore="UnusedAttribute">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -23,8 +25,8 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvMatchDate"
                 style="@style/TextTitleBig"
-                android:textStyle="bold"
-                android:text="@string/sample_date" />
+                android:text="@string/sample_date"
+                android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvMatchTime"
@@ -48,11 +50,11 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvTeamNameHome"
                         style="@style/TextTitleBig"
-                        android:textStyle="bold"
-                        android:text="@string/sample_team_name"
-                        android:paddingTop="@dimen/dimen_8dp"
+                        android:ellipsize="end"
                         android:maxLines="1"
-                        android:ellipsize="end" />
+                        android:paddingTop="@dimen/dimen_8dp"
+                        android:text="@string/sample_team_name"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -70,14 +72,14 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         style="@style/TextTitleExtraBig"
-                        android:text="@string/label_separate_score"
                         android:layout_gravity="center"
-                        android:textStyle="bold"
                         android:paddingLeft="@dimen/dimen_8dp"
-                        android:paddingRight="@dimen/dimen_8dp" />
+                        android:paddingRight="@dimen/dimen_8dp"
+                        android:text="@string/label_separate_score"
+                        android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvAwaycore"
+                        android:id="@+id/tvAwayScore"
                         style="@style/TextTitleExtraBig"
                         android:text="@string/sample_team_score" />
 
@@ -93,11 +95,11 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvTeamNameAway"
                         style="@style/TextTitleBig"
-                        android:textStyle="bold"
-                        android:text="@string/sample_team_name"
-                        android:paddingTop="@dimen/dimen_8dp"
+                        android:ellipsize="end"
                         android:maxLines="1"
-                        android:ellipsize="end" />
+                        android:paddingTop="@dimen/dimen_8dp"
+                        android:text="@string/sample_team_name"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 

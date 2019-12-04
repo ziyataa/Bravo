@@ -25,6 +25,11 @@
             layout="@layout/layout_error"
             android:visibility="gone" />
 
+        <include
+            android:id="@+id/layout_empty_data"
+            layout="@layout/layout_empty_data_search"
+            android:visibility="gone" />
+
     </RelativeLayout>
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

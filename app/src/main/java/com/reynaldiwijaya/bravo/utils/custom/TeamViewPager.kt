@@ -6,7 +6,7 @@ import android.view.MotionEvent
 import androidx.viewpager.widget.ViewPager
 
 class TeamViewPager(context: Context, attributes: AttributeSet) : ViewPager(context, attributes) {
-    var swipeEnabled : Boolean = true
+    var swipeEnabled: Boolean = true
 
     override fun onTouchEvent(ev: MotionEvent?): Boolean {
         return if (swipeEnabled) {

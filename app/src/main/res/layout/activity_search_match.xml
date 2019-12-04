@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/searchContainer"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.search.SearchMatchActivity">
+    tools:context=".view.search.SearchActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbSearch"
@@ -17,15 +18,57 @@
             android:id="@+id/searchMatch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:iconifiedByDefault="false"
             app:queryHint="@string/label_search"
-            app:searchIcon="@null"
-            app:iconifiedByDefault="false" />
+            app:searchIcon="@null" />
 
     </androidx.appcompat.widget.Toolbar>
 
+    <RadioGroup
+        android:checkedButton="@+id/rbTeam"
+        android:id="@+id/rgOptionSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_35dp"
+        android:layout_marginBottom="@dimen/dimen_8dp"
+        android:layout_marginLeft="@dimen/dimen_50dp"
+        android:layout_marginRight="@dimen/dimen_50dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:background="@drawable/bg_shape_radio_button"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_marginTop="@dimen/dimen_1dp"
+            android:layout_marginBottom="@dimen/dimen_1dp"
+            android:layout_marginStart="@dimen/dimen_1dp"
+            android:id="@+id/rbTeam"
+            android:background="@drawable/bg_button_toogle"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/label_team"
+            android:textColor="@android:color/black" />
+
+        <RadioButton
+            android:layout_marginEnd="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_1dp"
+            android:layout_marginBottom="@dimen/dimen_1dp"
+            android:id="@+id/rbMatch"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_toogle"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/label_match"
+            android:textColor="@android:color/black" />
+    </RadioGroup>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_8dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSearch"

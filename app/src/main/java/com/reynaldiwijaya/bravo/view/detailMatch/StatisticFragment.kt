@@ -2,15 +2,14 @@ package com.reynaldiwijaya.bravo.view.detailMatch
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
 import com.reynaldiwijaya.bravo.R
 import com.reynaldiwijaya.bravo.data.model.match.MatchItem
 import com.reynaldiwijaya.bravo.utils.Keys
-import com.reynaldiwijaya.bravo.utils.emptyScoreMatch
+import com.reynaldiwijaya.bravo.utils.emptyDataWithStrip
 import com.reynaldiwijaya.bravo.utils.emptyString
 import kotlinx.android.synthetic.main.fragment_statistic.*
 
@@ -69,10 +68,10 @@ class StatisticFragment : Fragment() {
             tvAwayGoals.text = awayGoal
         }
         if (match?.homeGoalDetails == null) {
-            tvHomeGoals.text = emptyScoreMatch()
+            tvHomeGoals.text = emptyDataWithStrip()
         }
         if (match?.awayGoalDetails == null) {
-            tvAwayGoals.text = emptyScoreMatch()
+            tvAwayGoals.text = emptyDataWithStrip()
         }
 
         // Redcards
@@ -94,10 +93,10 @@ class StatisticFragment : Fragment() {
             tvRedCardsAway.text = awayRedCard
         }
         if (match?.homeRedCards == null) {
-            tvRedCardsHome.text = emptyScoreMatch()
+            tvRedCardsHome.text = emptyDataWithStrip()
         }
         if (match?.awayRedCards == null) {
-            tvRedCardsAway.text = emptyScoreMatch()
+            tvRedCardsAway.text = emptyDataWithStrip()
         }
 
         // Yellow Cards
@@ -118,10 +117,10 @@ class StatisticFragment : Fragment() {
             tvYellowCardsAway.text = awayYellowCard
         }
         if (match?.homeYellowCards != null) {
-            tvYellowCardsHome.text = emptyScoreMatch()
+            tvYellowCardsHome.text = emptyDataWithStrip()
         }
         if (match?.awayYellowCards == null) {
-            tvYellowCardsAway.text = emptyScoreMatch()
+            tvYellowCardsAway.text = emptyDataWithStrip()
         }
 
         // Shots
@@ -132,11 +131,11 @@ class StatisticFragment : Fragment() {
             tvShotsAway.text = match?.awayShots
         }
         if (match?.homeShots == null) {
-            tvShotsHome.text = emptyScoreMatch()
+            tvShotsHome.text = emptyDataWithStrip()
         }
 
         if (match?.awayShots == null) {
-            tvShotsAway.text = emptyScoreMatch()
+            tvShotsAway.text = emptyDataWithStrip()
         }
     }
 
