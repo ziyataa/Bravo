@@ -21,5 +21,6 @@ interface BaseView {
                        offScreenPageLimit : Int)
 
     fun hideSoftKeyboard(activity : Activity)
-
+    
 }
+// si kecil udah mulai aktif ya bund
